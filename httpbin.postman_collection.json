@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "13ae69ba-addd-4ca5-a8d0-59556cb6fd55",
+		"name": "httpbin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get?name",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETrequrest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-foo",
+						"value": "Bar",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "httpbin.org/get?age=30&name=John&email=john@example.com",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "30"
+						},
+						{
+							"key": "name",
+							"value": "John"
+						},
+						{
+							"key": "email",
+							"value": "john@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/status/:status?name=John",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"status",
+						":status"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John"
+						}
+					],
+					"variable": [
+						{
+							"key": "status",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bearer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "foo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/bearer",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"bearer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTrequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a28f9a0-0bf4-4c39-a757-9a9704034f85",
+						"exec": [
+							"const response = pm.response.json();",
+							"pm.globals.set(\"orderId\", response.uuid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderId\": \"1234\",\n\t\"product\": [\n\t\t{\n\t\t\t\t\"quantity\": 20,\n\t\t\t\t\"productId\": 3000\n\t\t},\n\t\t{\n\t\t\t\t\"quantity\": 10,\n\t\t\t\t\"productId\": 2000\n\t\t}\n\t\t], \n\t\"customerId\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/post",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "httpbin.org/uuid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/uuid",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"uuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrderId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a28f9a0-0bf4-4c39-a757-9a9704034f85",
+						"exec": [
+							"const response = pm.response.json();",
+							"pm.globals.set(\"orderId\", response.uuid);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1661a815-53a2-4c9a-88aa-f61066e412a4",
+						"exec": [
+							"const customerId = Math.floor((Math.random() * 100) + 1);",
+							"console.log(customerId);",
+							"pm.globals.set(\"customerId\",customerId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": true,
+				"removeRefererHeaderOnRedirect": true,
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderId\": \"{{orderId}}\",\n\t\"customerId\": \"{{customerId}}\",\n\t\"product\": [\n\t\t{\n\t\t\t\t\"quantity\": 20,\n\t\t\t\t\"productId\": 3000\n\t\t},\t\n\t\t{\n\t\t\t\t\"quantity\": 10,\n\t\t\t\t\"productId\": 2000\n\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/post",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

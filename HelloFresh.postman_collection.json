@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "2fe600e8-baa7-4ae3-8534-9337a51b0ada",
+		"name": "HelloFresh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MainPage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "www.hellofresh.com",
+					"host": [
+						"www",
+						"hellofresh",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainPageNotFound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "www.hellofresh.com/no",
+					"host": [
+						"www",
+						"hellofresh",
+						"com"
+					],
+					"path": [
+						"no"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

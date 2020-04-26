@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "3273194c-569b-46ac-951d-950086114910",
+		"name": "numbersAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "random",
+			"item": [
+				{
+					"name": "trivia Random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "trivia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "math Random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "1",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "math"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "date Random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "date"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "year Random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "year"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "not-random",
+			"item": [
+				{
+					"name": "trivia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "1"
+								},
+								{
+									"key": "type",
+									"value": "trivia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "math",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "55"
+								},
+								{
+									"key": "type",
+									"value": "math"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "1",
+									"description": "month"
+								},
+								{
+									"key": "type",
+									"value": "22",
+									"description": "day"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "year",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "1980"
+								},
+								{
+									"key": "type",
+									"value": "year"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "randomMinMax",
+			"item": [
+				{
+					"name": "year Random minmax",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type?min=2010&max=2020",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"query": [
+								{
+									"key": "min",
+									"value": "2010"
+								},
+								{
+									"key": "max",
+									"value": "2020"
+								}
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "year"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "date Random minmax",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type?min=01/01&max=01/06",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"query": [
+								{
+									"key": "min",
+									"value": "01/01"
+								},
+								{
+									"key": "max",
+									"value": "01/06"
+								}
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "date"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "math Random minmax",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type?max=15&min=1",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "15"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "math"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trivia Random minmax",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://numbersapi.com/:number/:type?min=1000&max=1005",
+							"protocol": "http",
+							"host": [
+								"numbersapi",
+								"com"
+							],
+							"path": [
+								":number",
+								":type"
+							],
+							"query": [
+								{
+									"key": "min",
+									"value": "1000"
+								},
+								{
+									"key": "max",
+									"value": "1005"
+								}
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "type",
+									"value": "trivia"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "jsonPlaceholder",
+			"item": [
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "updatePostwithPUT",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 10054,\r\n  \"title\": \"this is my PUT request\",\r\n  \"body\": \"1est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"\r\n}"
+								},
+								"url": {
+									"raw": "https://jsonplaceholder.typicode.com/posts/:number",
+									"protocol": "https",
+									"host": [
+										"jsonplaceholder",
+										"typicode",
+										"com"
+									],
+									"path": [
+										"posts",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "number",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "postOne",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 10054,\r\n  \"title\": \"this is my POST request\",\r\n  \"body\": \"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"\r\n}"
+								},
+								"url": {
+									"raw": "https://jsonplaceholder.typicode.com/posts",
+									"protocol": "https",
+									"host": [
+										"jsonplaceholder",
+										"typicode",
+										"com"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "updatePOSTwithPATCH",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 10054,\r\n  \"title\": \"this is my PATCH request\",\r\n  \"body\": \"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"\r\n}"
+								},
+								"url": {
+									"raw": "https://jsonplaceholder.typicode.com/posts/:number",
+									"protocol": "https",
+									"host": [
+										"jsonplaceholder",
+										"typicode",
+										"com"
+									],
+									"path": [
+										"posts",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "number",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/:number",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								":number"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "eed5c52e-8fac-44a9-a7fd-990723389b67",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "65e1393b-33b7-4055-93c4-b22fbd063fde",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "95cc088c-7419-40be-a27a-3bae8559fa21",
+			"key": "colNumber",
+			"value": "100",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
