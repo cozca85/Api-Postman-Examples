@@ -7,11 +7,57 @@
 	"item": [
 		{
 			"name": "GetMovieInfo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91674abc-47e3-4014-b7bf-b058b35969ee",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Christopher Nolan\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Christopher Nolan\");",
+							"});",
+							"",
+							"var jsondata  = pm.response.json();",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(jsondata.Title).to.eql(\"Tenet\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(jsondata.Year).to.eql(\"2020\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(jsondata.Director).to.eql(\"Christopher Nolan\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(jsondata.Writer).to.eql(\"Christopher Nolan\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(jsondata.Language).to.eql(\"English\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"USA, UK\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.omdbapi.com/?apikey=[yourkey]&",
+					"raw": "http://www.omdbapi.com/?apikey=16001fab&t=tenet",
 					"protocol": "http",
 					"host": [
 						"www",
@@ -24,11 +70,12 @@
 					"query": [
 						{
 							"key": "apikey",
-							"value": "[yourkey]"
+							"value": "16001fab"
 						},
 						{
-							"key": "",
-							"value": null
+							"key": "t",
+							"value": "tenet",
+							"description": "Movie title"
 						}
 					]
 				}
@@ -60,7 +107,7 @@
 	],
 	"variable": [
 		{
-			"id": "54bbf6c9-21ff-4e69-84be-22c1593cea26",
+			"id": "f609c348-70ea-478a-bf56-bded9bb4d84f",
 			"key": "apiKey",
 			"value": "",
 			"type": "string"

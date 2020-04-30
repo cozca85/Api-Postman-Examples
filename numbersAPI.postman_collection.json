@@ -143,6 +143,31 @@
 			"item": [
 				{
 					"name": "trivia",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "11a1bb04-979e-41cf-ab48-78b879459b25",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"100\");",
+									"});",
+									"",
+									"var myNumber =",
+									"pm.environment.get(\"colNumber\"); ",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"100\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -160,7 +185,7 @@
 							"variable": [
 								{
 									"key": "number",
-									"value": "1"
+									"value": "{{colNumber}}"
 								},
 								{
 									"key": "type",
@@ -173,6 +198,28 @@
 				},
 				{
 					"name": "math",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2481a0d1-14f0-4b87-96a4-33799a069721",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Header is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Length\");",
+									"});",
+									"",
+									"pm.test(\"Header has value\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql('text/plain; charset=\"UTF-8\"; charset=utf-8');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -203,6 +250,21 @@
 				},
 				{
 					"name": "date",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0136be54-4432-45d2-a8b3-df7e8fa21441",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -235,6 +297,24 @@
 				},
 				{
 					"name": "year",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c7e9976-de25-4c55-a61a-f05fc487dbae",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(4000);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -478,6 +558,29 @@
 					"item": [
 						{
 							"name": "postOne",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "79d16217-c542-4a1c-a89d-78fe3db82096",
+										"exec": [
+											"pm.test(\"Successful POST request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+											"});",
+											"",
+											"pm.test(\"Status code is 201\", function()",
+											"{",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string Created\", function () {",
+											"    pm.response.to.have.status(\"Created\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -597,7 +700,7 @@
 	],
 	"variable": [
 		{
-			"id": "95cc088c-7419-40be-a27a-3bae8559fa21",
+			"id": "603d47d6-ff12-4511-99c6-a4ea531d499b",
 			"key": "colNumber",
 			"value": "100",
 			"type": "string"

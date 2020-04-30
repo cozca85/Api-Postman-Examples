@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "c2fb6c0b-732f-4c2d-8cdb-fd41aa423d54",
+		"name": "poke API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "berry",
+			"item": [
+				{
+					"name": "berryById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e4c6d065-ab10-488b-aa6e-9d016c271faf",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2500);",
+									"});",
+									"",
+									"//json body tests",
+									"",
+									"var jsondata = pm.response.json();",
+									"",
+									"pm.test(\"soil_dryness\", function()",
+									"{",
+									"    pm.expect(jsondata.soil_dryness).to.eql(6)",
+									"})",
+									"",
+									"pm.test(\"smoothness\", function()",
+									"{",
+									"    pm.expect(jsondata.smoothness).to.eql(30)",
+									"})",
+									"",
+									"pm.test(\"size\", function()",
+									"{",
+									"    pm.expect(jsondata.size).to.eql(252)",
+									"})",
+									"",
+									"pm.test(\"name\", function()",
+									"{",
+									"    pm.expect(jsondata.name).to.eql(\"payapa\")",
+									"})",
+									"",
+									"pm.test(\"name\", function()",
+									"{",
+									"    pm.expect(jsondata.firmness.name).to.eql(\"soft\")",
+									"})",
+									"",
+									"pm.test(\"natural gift power is verified\", function()",
+									"{",
+									"    pm.expect(jsondata.natural_gift_power).to.eql(60)",
+									"})",
+									"",
+									"pm.test(\"max_harvest\", function()",
+									"{",
+									"    pm.expect(jsondata.max_harvest).to.eql(5)",
+									"})",
+									"",
+									"pm.test(\"growth_time\", function()",
+									"{",
+									"    pm.expect(jsondata.growth_time).to.eql(18)",
+									"})",
+									"",
+									"pm.test(\"item.name\", function()",
+									"{",
+									"    pm.expect(jsondata.item.name).to.eql(\"payapa-berry\")",
+									"})",
+									"",
+									"pm.test(\"url\", function()",
+									"{",
+									"    pm.expect(jsondata.item.url).to.eql(\"https://pokeapi.co/api/v2/item/170/\")",
+									"})",
+									"",
+									"pm.test(\"flavor 0\", function()",
+									"{",
+									"    pm.expect(jsondata.flavors[0].potency).to.eql(0)",
+									"})",
+									"",
+									"pm.test(\"flavor 2 name\", function()",
+									"{",
+									"    pm.expect(jsondata.flavors[2].flavor.name).to.eql(\"sweet\")",
+									"})",
+									"",
+									"//header tests",
+									"",
+									"pm.test(\"response header is present\", function()",
+									"{",
+									"    pm.response.to.have.header(\"Date\");",
+									"})",
+									"",
+									"pm.test(\"content-type is correct\", function()",
+									"{",
+									"    pm.expect(pm.response.headers.get(\"content-type\")).to.include(\"application/json\");",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/berry/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"berry",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "45"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "berryByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/berry/:name",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"berry",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "payapa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "pokem",
+			"item": [
+				{
+					"name": "byNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pokemon/:number",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pokemon",
+								":number"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "555"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byNumber Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pokemon/:name",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pokemon",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "huntail"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
