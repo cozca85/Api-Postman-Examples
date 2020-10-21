@@ -1,9 +1,0 @@
-1. v2. get berries by id and name 
-
-test - header, body , response time
-
-2. pokemon -- pokemon
-
-get by id and name 
-
-test header body and response time 
